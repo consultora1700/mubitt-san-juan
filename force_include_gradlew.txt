@@ -1,0 +1,16 @@
+# Este archivo asegura que gradlew esté incluido en el repositorio
+# Ejecutar desde C:\Users\lucas\mubitt:
+
+git add android/gradlew --force
+git add android/gradlew.bat --force
+git add android/gradle/wrapper/gradle-wrapper.jar --force
+git add android/gradle/wrapper/gradle-wrapper.properties --force
+
+# Si aún hay problemas, regenerar el wrapper:
+cd android
+gradle wrapper --gradle-version=8.2
+
+# Luego hacer commit:
+git add .
+git commit -m "Force include gradlew wrapper files"
+git push

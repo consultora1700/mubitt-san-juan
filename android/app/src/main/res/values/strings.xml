@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Info -->
+    <string name="app_name">Mubitt</string>
+    <string name="app_description">Tu transporte en San Juan</string>
+    <string name="app_tagline">Competidor premium de Uber y Didi</string>
+    
+    <!-- General UI -->
+    <string name="welcome">Bienvenido a Mubitt</string>
+    <string name="loading">Cargando…</string>
+    <string name="error_generic">Ha ocurrido un error</string>
+    <string name="retry">Reintentar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="continue_text">Continuar</string>
+    <string name="back">Atrás</string>
+    <string name="next">Siguiente</string>
+    <string name="done">Listo</string>
+    
+    <!-- Authentication -->
+    <string name="sign_in">Iniciar Sesión</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="sign_out">Cerrar Sesión</string>
+    <string name="email">Correo electrónico</string>
+    <string name="phone">Teléfono</string>
+    <string name="password">Contraseña</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    
+    <!-- Location -->
+    <string name="location_permission_required">Permiso de ubicación requerido</string>
+    <string name="location_permission_rationale">Mubitt necesita acceso a tu ubicación para encontrar conductores cercanos</string>
+    <string name="enable_location">Activar ubicación</string>
+    <string name="current_location">Ubicación actual</string>
+    <string name="search_destination">¿A dónde vamos?</string>
+    <string name="pickup_location">Punto de recogida</string>
+    <string name="destination">Destino</string>
+    
+    <!-- San Juan specific -->
+    <string name="san_juan_welcome">¡Bienvenido a tu app de transporte sanjuanina!</string>
+    <string name="local_references">Buscar por referencias locales</string>
+    <string name="near_hospital_rawson">Cerca del Hospital Rawson</string>
+    <string name="near_unsj">Cerca de la UNSJ</string>
+    <string name="near_shopping">Cerca del Shopping</string>
+    <string name="downtown_sj">Centro de San Juan</string>
+    
+    <!-- Trip -->
+    <string name="request_ride">Solicitar viaje</string>
+    <string name="trip_fare">Tarifa estimada</string>
+    <string name="trip_eta">Tiempo estimado</string>
+    <string name="driver_arriving">Tu conductor está llegando</string>
+    <string name="trip_in_progress">Viaje en curso</string>
+    <string name="trip_completed">Viaje completado</string>
+    <string name="rate_trip">Calificar viaje</string>
+    
+    <!-- Driver -->
+    <string name="driver_name">Conductor: %1$s</string>
+    <string name="driver_rating">Calificación: %1$.1f</string>
+    <string name="driver_eta">Llega en %1$d minutos</string>
+    <string name="vehicle_info">%1$s - %2$s</string>
+    
+    <!-- Payment -->
+    <string name="payment_method">Método de pago</string>
+    <string name="cash">Efectivo</string>
+    <string name="card">Tarjeta</string>
+    <string name="mercado_pago">MercadoPago</string>
+    <string name="payment_total">Total: $%1$s</string>
+    
+    <!-- Errors -->
+    <string name="error_network">Error de conexión</string>
+    <string name="error_location">No se pudo obtener la ubicación</string>
+    <string name="error_no_drivers">No hay conductores disponibles</string>
+    <string name="error_trip_cancelled">El viaje ha sido cancelado</string>
+    
+    <!-- Accessibility -->
+    <string name="content_description_logo">Logo de Mubitt</string>
+    <string name="content_description_map">Mapa de San Juan</string>
+    <string name="content_description_driver_photo">Foto del conductor</string>
+    <string name="content_description_back_button">Botón atrás</string>
+</resources>

@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(keytool:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(./build_apk.sh:*)",
+      "Bash(gradle:*)",
+      "Bash(apt list:*)",
+      "Bash(sudo apt:*)",
+      "Bash(export:*)",
+      "Bash(export PATH=\"$JAVA_HOME/bin:$PATH\")",
+      "Bash(java:*)",
+      "Bash(\"$JAVA_HOME/bin/java\" -version)",
+      "Bash(\"/mnt/c/Program Files/Java/jdk-23.0.2+7/bin/java.exe\" -version)",
+      "Bash(mkdir:*)",
+      "Bash(ln:*)",
+      "Bash(snap version:*)",
+      "Bash(snap install:*)",
+      "Bash(tar:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/load_context.sh:*)"
+    ],
+    "deny": []
+  }
+}

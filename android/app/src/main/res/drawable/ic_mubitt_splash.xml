@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Temporary placeholder icon for Mubitt -->
+    <!-- TODO: Replace with professional logo design (Phase 1) -->
+    
+    <group android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:pivotX="54"
+        android:pivotY="54">
+        
+        <!-- Background circle -->
+        <path
+            android:fillColor="@color/white"
+            android:pathData="M54,54m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0" />
+        
+        <!-- Stylized "M" for Mubitt -->
+        <path
+            android:fillColor="@color/mubitt_green"
+            android:pathData="M34,34 L34,74 L38,74 L38,45 L50,62 L58,62 L70,45 L70,74 L74,74 L74,34 L67,34 L54,56 L41,34 Z" />
+        
+        <!-- Small car icon below M -->
+        <path
+            android:fillColor="@color/mubitt_orange"
+            android:pathData="M44,76 L44,78 L46,78 L46,80 L48,80 L48,78 L60,78 L60,80 L62,80 L62,78 L64,78 L64,76 L44,76 Z" />
+        
+        <path
+            android:fillColor="@color/mubitt_orange"
+            android:pathData="M46,72 L62,72 L64,74 L44,74 L46,72 Z" />
+        
+        <!-- Wheels -->
+        <circle
+            android:fillColor="@color/mubitt_gray_700"
+            android:cx="48"
+            android:cy="76"
+            android:radius="1.5" />
+        
+        <circle
+            android:fillColor="@color/mubitt_gray_700"
+            android:cx="60"
+            android:cy="76"
+            android:radius="1.5" />
+    </group>
+</vector>

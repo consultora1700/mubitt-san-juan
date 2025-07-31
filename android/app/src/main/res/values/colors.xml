@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mubitt Brand Colors - San Juan Theme -->
+    
+    <!-- Primary Colors -->
+    <color name="mubitt_green">#006C4C</color>
+    <color name="mubitt_green_light">#89F8C7</color>
+    <color name="mubitt_green_dark">#004D35</color>
+    
+    <!-- Secondary Colors -->
+    <color name="mubitt_brown">#4F6354</color>
+    <color name="mubitt_brown_light">#7B9284</color>
+    <color name="mubitt_brown_dark">#2A3529</color>
+    
+    <!-- Accent Colors -->
+    <color name="mubitt_orange">#FF8C42</color>
+    <color name="mubitt_blue">#2196F3</color>
+    <color name="mubitt_red">#BA1A1A</color>
+    
+    <!-- Neutral Colors -->
+    <color name="mubitt_gray_50">#FBFDF9</color>
+    <color name="mubitt_gray_100">#F0F4F0</color>
+    <color name="mubitt_gray_200">#E1E8E1</color>
+    <color name="mubitt_gray_300">#CAD5CA</color>
+    <color name="mubitt_gray_400">#9BA89B</color>
+    <color name="mubitt_gray_500">#6B776B</color>
+    <color name="mubitt_gray_600">#53635D</color>
+    <color name="mubitt_gray_700">#3C4B41</color>
+    <color name="mubitt_gray_800">#283228</color>
+    <color name="mubitt_gray_900">#111F15</color>
+    
+    <!-- System Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Notification Colors -->
+    <color name="mubitt_primary">#006C4C</color>
+    <color name="notification_accent">#FF8C42</color>
+</resources>

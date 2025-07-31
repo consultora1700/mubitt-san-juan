@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Splash Screen Theme -->
+    <style name="Theme.Mubitt.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/mubitt_green</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_mubitt_splash</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Mubitt</item>
+    </style>
+    
+    <!-- Main App Theme -->
+    <style name="Theme.Mubitt" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mubitt_green</item>
+        <item name="colorPrimaryVariant">@color/mubitt_green_dark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:statusBarColor">@color/mubitt_green</item>
+        <item name="android:navigationBarColor">@color/mubitt_green</item>
+    </style>
+</resources>

@@ -1,0 +1,40 @@
+# Android specific
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Google Maps API Keys and sensitive data
+google_maps_api.xml
+google-services.json
+
+# Keystore files (sensitive)
+*.keystore
+*.jks
+keystore/
+
+# Release files
+*.aab
+*.apk
+
+# Signing configurations
+signing.properties
+
+# Firebase configuration
+firebase-debug.log
+
+# Proguard mapping files
+mapping.txt
+seeds.txt
+usage.txt

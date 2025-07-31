@@ -6,6 +6,9 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+// Define Compose version
+def compose_version = '1.5.4'
+
 android {
     namespace 'com.mubitt.app'
     compileSdk 34

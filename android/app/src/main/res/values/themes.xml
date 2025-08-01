@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+    <!-- Base application theme for Material3 -->
+    <style name="Base.Theme.Mubitt" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/mubitt_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/mubitt_green_light</item>
+        <item name="colorOnPrimaryContainer">@color/mubitt_green_dark</item>
+        
+        <item name="colorSecondary">@color/mubitt_brown</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/mubitt_brown_light</item>
+        <item name="colorOnSecondaryContainer">@color/mubitt_brown_dark</item>
+        
+        <item name="colorTertiary">@color/mubitt_orange</item>
+        <item name="colorOnTertiary">@color/white</item>
+        
+        <item name="colorError">@color/mubitt_red</item>
+        <item name="colorOnError">@color/white</item>
+        
+        <item name="colorSurface">@color/mubitt_gray_50</item>
+        <item name="colorOnSurface">@color/mubitt_gray_900</item>
+        <item name="colorSurfaceVariant">@color/mubitt_gray_100</item>
+        <item name="colorOnSurfaceVariant">@color/mubitt_gray_600</item>
+        
+        <item name="colorOutline">@color/mubitt_gray_400</item>
+        <item name="colorOutlineVariant">@color/mubitt_gray_300</item>
+        
+        <item name="android:statusBarColor">@color/mubitt_green</item>
+        <item name="android:navigationBarColor">@color/mubitt_green</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Main theme that extends base theme -->
+    <style name="Theme.Mubitt" parent="Base.Theme.Mubitt" />
+
+</resources>

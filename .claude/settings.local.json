@@ -19,7 +19,8 @@
       "Bash(snap install:*)",
       "Bash(tar:*)",
       "Bash(chmod:*)",
-      "Bash(./scripts/load_context.sh:*)"
+      "Bash(./scripts/load_context.sh:*)",
+      "Bash(.\\scripts\\load_context.sh:*)"
     ],
     "deny": []
   }

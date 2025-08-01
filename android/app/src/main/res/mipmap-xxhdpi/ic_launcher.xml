@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="144dp"
+    android:height="144dp"
+    android:viewportWidth="144"
+    android:viewportHeight="144">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="@color/mubitt_green"
+        android:pathData="M72,72m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0" />
+    
+    <!-- Mubitt "M" -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M42,42 L42,102 L51,102 L51,66 L72,90 L93,66 L93,102 L102,102 L102,42 L84,42 L72,66 L60,42 Z" />
+    
+    <!-- Car -->
+    <path
+        android:fillColor="@color/mubitt_orange"
+        android:pathData="M54,108 L54,111 L57,111 L57,114 L60,114 L60,111 L84,111 L84,114 L87,114 L87,111 L90,111 L90,108 L54,108 Z" />
+    
+    <circle android:fillColor="@color/white" android:cx="63" android:cy="108" android:radius="3" />
+    <circle android:fillColor="@color/white" android:cx="81" android:cy="108" android:radius="3" />
+</vector>

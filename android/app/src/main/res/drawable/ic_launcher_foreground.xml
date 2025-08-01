@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Foreground layer for adaptive icon -->
+    <!-- Centered in safe zone (36dp margin from edges) -->
+    <group android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:pivotX="54"
+        android:pivotY="54">
+        
+        <!-- Mubitt "M" logo -->
+        <path
+            android:fillColor="@color/white"
+            android:pathData="M34,34 L34,74 L40,74 L40,50 L54,68 L68,50 L68,74 L74,74 L74,34 L64,34 L54,56 L44,34 Z" />
+        
+        <!-- Car representation -->
+        <path
+            android:fillColor="@color/mubitt_orange"
+            android:pathData="M44,78 L44,80 L46,80 L46,82 L48,82 L48,80 L60,80 L60,82 L62,82 L62,80 L64,80 L64,78 L44,78 Z" />
+        
+        <path
+            android:fillColor="@color/mubitt_orange"
+            android:pathData="M46,76 L62,76 L64,77 L44,77 L46,76 Z" />
+        
+        <!-- Wheels -->
+        <circle
+            android:fillColor="@color/white"
+            android:cx="48"
+            android:cy="78"
+            android:radius="1.5" />
+        
+        <circle
+            android:fillColor="@color/white"
+            android:cx="60"
+            android:cy="78"
+            android:radius="1.5" />
+    </group>
+</vector>

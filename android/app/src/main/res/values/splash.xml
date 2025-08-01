@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Splash Screen Theme -->
-    <style name="Theme.Mubitt.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/mubitt_green</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_mubitt_splash</item>
-        <item name="windowSplashScreenAnimationDuration">1000</item>
-        <item name="postSplashScreenTheme">@style/Theme.Mubitt</item>
+    <!-- 
+    Professional Splash Screen Theme - Matches industry standards for ride-sharing apps
+    Uses robust Material Components base with Mubitt branding
+    -->
+    <style name="Theme.Mubitt.Splash" parent="Theme.Mubitt">
+        <!-- Solid Mubitt green background for professional splash -->
+        <item name="android:windowBackground">@color/mubitt_green</item>
+        
+        <!-- System UI optimization for splash -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        
+        <!-- Status bar matches brand color -->
+        <item name="android:statusBarColor">@color/mubitt_green</item>
+        <item name="android:navigationBarColor">@color/mubitt_green</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Prevent splash from being affected by transitions -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">false</item>
     </style>
-    
-    <!-- Splash Screen specific theme - this is used only for splash -->
-    <!-- Main app theme is now defined in themes.xml -->
 </resources>

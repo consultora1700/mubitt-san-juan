@@ -21,6 +21,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.mubitt.core.domain.model.Driver
 import com.mubitt.core.domain.model.Location
 import com.mubitt.core.domain.model.Trip
+import com.mubitt.core.domain.model.TripLocation
+import com.mubitt.core.domain.model.TripStatus
 import com.mubitt.core.ui.components.maps.MubittMapView
 
 /**
@@ -48,7 +50,7 @@ fun TripTrackingScreen(
     
     // Manejar completion del viaje
     LaunchedEffect(uiState.trip?.status) {
-        if (uiState.trip?.status == Trip.Status.COMPLETED) {
+        if (uiState.trip?.status == TripStatus.COMPLETED) {
             uiState.trip?.let { onTripCompleted(it) }
         }
     }
@@ -58,11 +60,10 @@ fun TripTrackingScreen(
         uiState.trip?.let { trip ->
             MubittMapView(
                 modifier = Modifier.fillMaxSize(),
-                initialLocation = trip.pickupLocation,
-                pickupLocation = trip.pickupLocation,
-                dropoffLocation = trip.dropoffLocation,
+                initialLocation = trip.pickupLocation.toLocation(),
+                pickupLocation = trip.pickupLocation.toLocation(),
+                dropoffLocation = trip.dropoffLocation.toLocation(),
                 driverLocation = uiState.driverLocation,
-                routePolyline = uiState.routePolyline,
                 onLocationSelected = { /* No permitir cambios durante viaje */ }
             )
         }
@@ -170,10 +171,10 @@ private fun TripStatusCard(
                 Column {
                     Text(
                         text = when (trip?.status) {
-                            Trip.Status.DRIVER_ASSIGNED -> "Conductor asignado"
-                            Trip.Status.DRIVER_ARRIVING -> "Conductor en camino"
-                            Trip.Status.IN_PROGRESS -> "En viaje"
-                            Trip.Status.ARRIVED -> "Conductor llegó"
+                            TripStatus.ACCEPTED -> "Conductor asignado"
+                            TripStatus.DRIVER_ARRIVING -> "Conductor en camino"
+                            TripStatus.IN_PROGRESS -> "En viaje"
+                            TripStatus.DRIVER_ARRIVED -> "Conductor llegó"
                             else -> "Preparando viaje"
                         },
                         fontSize = 18.sp,
@@ -196,7 +197,7 @@ private fun TripStatusCard(
             
             // Información de destino
             trip?.let { tripData ->
-                HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
+                Divider(modifier = Modifier.padding(vertical = 12.dp))
                 
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -228,12 +229,12 @@ private fun TripStatusCard(
 }
 
 @Composable
-private fun StatusIndicator(status: Trip.Status?) {
+private fun StatusIndicator(status: TripStatus?) {
     val color = when (status) {
-        Trip.Status.DRIVER_ASSIGNED -> MaterialTheme.colorScheme.secondary
-        Trip.Status.DRIVER_ARRIVING -> Color(0xFFFF9800)
-        Trip.Status.IN_PROGRESS -> MaterialTheme.colorScheme.primary
-        Trip.Status.ARRIVED -> Color(0xFF4CAF50)
+        TripStatus.ACCEPTED -> MaterialTheme.colorScheme.secondary
+        TripStatus.DRIVER_ARRIVING -> Color(0xFFFF9800)
+        TripStatus.IN_PROGRESS -> MaterialTheme.colorScheme.primary
+        TripStatus.DRIVER_ARRIVED -> Color(0xFF4CAF50)
         else -> MaterialTheme.colorScheme.outline
     }
     
@@ -357,7 +358,7 @@ private fun DriverInfoCard(
 private fun TripActionsCard(
     onEmergency: () -> Unit,
     onShareTrip: () -> Unit,
-    tripStatus: Trip.Status?
+    tripStatus: TripStatus?
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -380,7 +381,7 @@ private fun TripActionsCard(
             
             // Botón específico por estado
             when (tripStatus) {
-                Trip.Status.DRIVER_ARRIVING -> {
+                TripStatus.DRIVER_ARRIVING -> {
                     ActionButton(
                         icon = Icons.Default.Phone,
                         label = "Llamar",
@@ -389,7 +390,7 @@ private fun TripActionsCard(
                         iconTint = MaterialTheme.colorScheme.primary
                     )
                 }
-                Trip.Status.IN_PROGRESS -> {
+                TripStatus.IN_PROGRESS -> {
                     ActionButton(
                         icon = Icons.Default.Navigation,
                         label = "Ruta",
@@ -444,4 +445,14 @@ private fun ActionButton(
             fontWeight = FontWeight.Medium
         )
     }
+}
+
+// Extension function to convert TripLocation to Location
+private fun TripLocation.toLocation(): Location {
+    return Location(
+        latitude = this.latitude,
+        longitude = this.longitude,
+        address = this.address,
+        reference = this.sanJuanReference
+    )
 }

@@ -2,9 +2,13 @@ package com.mubitt.features.trip
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.mubitt.core.data.remote.dto.ApiResult
 import com.mubitt.core.domain.model.Driver
 import com.mubitt.core.domain.model.Location
 import com.mubitt.core.domain.model.Trip
+import com.mubitt.core.domain.model.Vehicle
+import com.mubitt.core.domain.model.VehicleType
+import com.mubitt.core.domain.model.VehicleInsurance
 import com.mubitt.core.domain.repository.TripRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -31,19 +35,23 @@ class TripTrackingViewModel @Inject constructor(
             
             try {
                 // Cargar trip desde repository
-                val trip = tripRepository.getTripById(tripId)
-                
-                if (trip != null) {
-                    _uiState.value = _uiState.value.copy(
-                        trip = trip,
-                        driver = createMockDriver(), // TODO: Obtener del trip
-                        isLoading = false
-                    )
-                } else {
-                    _uiState.value = _uiState.value.copy(
-                        error = "No se pudo cargar el viaje",
-                        isLoading = false
-                    )
+                when (val result = tripRepository.getTripById(tripId)) {
+                    is ApiResult.Success -> {
+                        _uiState.value = _uiState.value.copy(
+                            trip = result.data,
+                            driver = createMockDriver(), // TODO: Obtener del trip
+                            isLoading = false
+                        )
+                    }
+                    is ApiResult.Error -> {
+                        _uiState.value = _uiState.value.copy(
+                            error = result.message,
+                            isLoading = false
+                        )
+                    }
+                    is ApiResult.Loading -> {
+                        // Ya estamos en loading state
+                    }
                 }
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(
@@ -88,23 +96,43 @@ class TripTrackingViewModel @Inject constructor(
     private fun createMockDriver(): Driver {
         return Driver(
             id = "driver_001",
-            name = "Carlos Mendoza",
+            userId = "user_driver_001",
+            firstName = "Carlos",
+            lastName = "Mendoza",
             phoneNumber = "+542644123456",
+            licenseNumber = "SJ123456",
             rating = 4.8,
-            vehicle = Driver.Vehicle(
-                make = "Toyota",
-                model = "Corolla",
-                year = 2020,
-                color = "Blanco",
-                licensePlate = "ABC 123"
-            ),
-            location = Location(
+            totalTrips = 150,
+            isOnline = true,
+            isAvailable = true,
+            currentLocation = Location(
                 latitude = -31.5400,
                 longitude = -68.5300,
                 address = "Cerca de tu ubicación"
             ),
-            isAvailable = true,
-            isVerified = true
+            lastActiveTime = System.currentTimeMillis(),
+            joinedAt = System.currentTimeMillis() - (365L * 24 * 60 * 60 * 1000), // 1 year ago
+            vehicle = Vehicle(
+                id = "vehicle_001",
+                make = "Toyota",
+                model = "Corolla",
+                year = 2020,
+                color = "Blanco",
+                licensePlate = "ABC 123",
+                type = VehicleType.STANDARD,
+                capacity = 4,
+                isOperational = true,
+                lastInspection = System.currentTimeMillis() - (30L * 24 * 60 * 60 * 1000), // 30 days ago
+                insurance = VehicleInsurance(
+                    provider = "La Caja Seguros",
+                    policyNumber = "POL123456",
+                    expiryDate = System.currentTimeMillis() + (365L * 24 * 60 * 60 * 1000), // 1 year from now
+                    isValid = true
+                )
+            ),
+            isVerified = true,
+            documentsVerified = true,
+            backgroundCheckPassed = true
         )
     }
 }

@@ -20,6 +20,6 @@
         android:fillColor="@color/mubitt_orange"
         android:pathData="M27,54 L27,55.5 L28.5,55.5 L28.5,57 L30,57 L30,55.5 L42,55.5 L42,57 L43.5,57 L43.5,55.5 L45,55.5 L45,54 L27,54 Z" />
     
-    <circle android:fillColor="@color/white" android:cx="31.5" android:cy="54" android:radius="1.5" />
-    <circle android:fillColor="@color/white" android:cx="40.5" android:cy="54" android:radius="1.5" />
+    <path android:fillColor="@color/white" android:pathData="M31.5,52.5 A1.5,1.5 0 1,1 31.5,55.5 A1.5,1.5 0 1,1 31.5,52.5 Z" />
+    <path android:fillColor="@color/white" android:pathData="M40.5,52.5 A1.5,1.5 0 1,1 40.5,55.5 A1.5,1.5 0 1,1 40.5,52.5 Z" />
 </vector>

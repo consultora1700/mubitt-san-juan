@@ -121,7 +121,7 @@ class TripRepositoryImpl @Inject constructor(
                         reference = dropoffLocation.reference
                     ),
                     vehicleType = vehicleType.name,
-                    paymentMethodId = \"\" // No needed for estimate
+                    paymentMethodId = "" // Not needed for estimate
                 )
             )
         }.let { result ->
@@ -132,7 +132,8 @@ class TripRepositoryImpl @Inject constructor(
             }
         }
     }
-    \n    // Métodos específicos para San Juan
+
+    // Métodos específicos para San Juan
     suspend fun getPopularDestinations(): ApiResult<List<Location>> {
         return safeApiCall {
             tripApiService.getPopularDestinations()

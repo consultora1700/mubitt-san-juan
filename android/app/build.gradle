@@ -115,6 +115,7 @@ android {
     // KSP configuration
     ksp {
         arg("correctErrorTypes", "true")
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
 }
 

@@ -33,16 +33,12 @@
             android:pathData="M46,72 L62,72 L64,74 L44,74 L46,72 Z" />
         
         <!-- Wheels -->
-        <circle
+        <path
             android:fillColor="@color/mubitt_gray_700"
-            android:cx="48"
-            android:cy="76"
-            android:radius="1.5" />
+            android:pathData="M48,74.5 A1.5,1.5 0 1,1 48,77.5 A1.5,1.5 0 1,1 48,74.5 Z" />
         
-        <circle
+        <path
             android:fillColor="@color/mubitt_gray_700"
-            android:cx="60"
-            android:cy="76"
-            android:radius="1.5" />
+            android:pathData="M60,74.5 A1.5,1.5 0 1,1 60,77.5 A1.5,1.5 0 1,1 60,74.5 Z" />
     </group>
 </vector>

@@ -27,16 +27,12 @@
             android:pathData="M46,76 L62,76 L64,77 L44,77 L46,76 Z" />
         
         <!-- Wheels -->
-        <circle
+        <path
             android:fillColor="@color/white"
-            android:cx="48"
-            android:cy="78"
-            android:radius="1.5" />
+            android:pathData="M48,76.5 A1.5,1.5 0 1,1 48,79.5 A1.5,1.5 0 1,1 48,76.5 Z" />
         
-        <circle
+        <path
             android:fillColor="@color/white"
-            android:cx="60"
-            android:cy="78"
-            android:radius="1.5" />
+            android:pathData="M60,76.5 A1.5,1.5 0 1,1 60,79.5 A1.5,1.5 0 1,1 60,76.5 Z" />
     </group>
 </vector>

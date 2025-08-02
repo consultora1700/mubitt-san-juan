@@ -15,7 +15,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.mubitt.shared.theme.MubittTheme
 import com.mubitt.shared.navigation.MubittNavigation
-// import dagger.hilt.android.AndroidEntryPoint // Temporarily disabled
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Main Activity for Mubitt App
@@ -24,7 +24,7 @@ import com.mubitt.shared.navigation.MubittNavigation
  * Standards: Uber-level UX, <200ms transitions
  * Target: San Juan market dominance over Uber/Didi
  */
-// @AndroidEntryPoint // Temporarily disabled
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {

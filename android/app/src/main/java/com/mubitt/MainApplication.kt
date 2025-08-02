@@ -1,7 +1,7 @@
 package com.mubitt
 
 import android.app.Application
-// import dagger.hilt.android.HiltAndroidApp // Temporarily disabled
+import dagger.hilt.android.HiltAndroidApp
 
 /**
  * Main Application class for Mubitt
@@ -10,7 +10,7 @@ import android.app.Application
  * Standards: Must be better than Uber/Didi
  * Performance: <2s startup, <0.1% crash rate
  */
-// @HiltAndroidApp // Temporarily disabled
+@HiltAndroidApp
 class MubittApplication : Application() {
     
     override fun onCreate() {

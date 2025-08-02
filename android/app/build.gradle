@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    // id 'kotlin-kapt' // Temporarily disabled
-    // id 'dagger.hilt.android.plugin' // Temporarily disabled  
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
 }
 
@@ -100,7 +100,7 @@ android {
     }
     
     composeOptions {
-        kotlinCompilerExtensionVersion = '1.5.4'
+        kotlinCompilerExtensionVersion = '1.5.8'
     }
     
     // Configuración de testing
@@ -159,20 +159,20 @@ dependencies {
     // Navigation
     implementation 'androidx.navigation:navigation-compose:2.7.6'
     
-    // Hilt DI - Temporarily disabled
-    // implementation 'com.google.dagger:hilt-android:2.48'
-    // kapt 'com.google.dagger:hilt-compiler:2.48'
-    // implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'
+    // Hilt DI
+    implementation 'com.google.dagger:hilt-android:2.48'
+    kapt 'com.google.dagger:hilt-compiler:2.48'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'
     
     // Network
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
     
-    // Room Database - Kapt temporarily disabled
+    // Room Database
     implementation 'androidx.room:room-runtime:2.6.1'
     implementation 'androidx.room:room-ktx:2.6.1'
-    // kapt 'androidx.room:room-compiler:2.6.1' // Temporarily disabled
+    kapt 'androidx.room:room-compiler:2.6.1'
     
     // Maps
     implementation 'com.google.android.gms:play-services-maps:18.2.0'

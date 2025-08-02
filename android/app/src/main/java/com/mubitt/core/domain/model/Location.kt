@@ -11,6 +11,7 @@ data class Location(
     val longitude: Double,
     val address: String,
     val name: String? = null,
+    val reference: String? = null,
     val type: LocationType = LocationType.GENERAL
 ) {
     

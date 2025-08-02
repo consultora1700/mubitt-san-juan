@@ -81,7 +81,7 @@ class TripRepositoryImpl @Inject constructor(
         return safeApiCall {
             tripApiService.cancelTrip(
                 tripId,
-                CancelTripRequest(reason = reason, category = \"user_request\")
+                CancelTripRequest(reason = reason, category = "user_request")
             )
         }
     }

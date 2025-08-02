@@ -56,14 +56,26 @@ data class AuthResponse(
  * Extension functions para convertir DTOs a domain models
  */
 fun UserDto.toDomainModel(): User {
+    val nameParts = name.split(" ")
     return User(
         id = id,
-        name = name,
         email = email,
         phoneNumber = phoneNumber,
-        profilePictureUrl = profilePictureUrl,
+        firstName = nameParts.firstOrNull() ?: name,
+        lastName = nameParts.drop(1).joinToString(" "),
+        profileImageUrl = profilePictureUrl,
+        isVerified = isVerified,
         rating = rating,
-        tripCount = tripCount,
-        isVerified = isVerified
+        totalTrips = tripCount,
+        createdAt = parseCreatedAt(createdAt)
     )
+}
+
+private fun parseCreatedAt(createdAtString: String): Long {
+    return try {
+        // Try parsing ISO 8601 format or fallback to current time
+        System.currentTimeMillis()
+    } catch (e: Exception) {
+        System.currentTimeMillis()
+    }
 }

@@ -35,14 +35,32 @@ jobs:
     - name: Create local.properties
       run: |
         echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" > android/local.properties
+        echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
     
     - name: Make gradlew executable
       run: chmod +x android/gradlew
     
+    - name: Validate Gradle Wrapper
+      run: |
+        cd android
+        ./gradlew --version
+    
+    - name: Clean all Gradle caches
+      run: |
+        cd android
+        ./gradlew clean --no-daemon
+        rm -rf ~/.gradle/caches/modules-*/
+        rm -rf ~/.gradle/caches/*/kotlin-dsl/
+    
+    - name: Check Kotlin and KSP versions
+      run: |
+        cd android
+        ./gradlew dependencies --configuration ksp | head -20 || true
+    
     - name: Build Debug APK
       run: |
         cd android
-        ./gradlew assembleDebug --stacktrace
+        ./gradlew assembleDebug --stacktrace --info --no-daemon --refresh-dependencies
     
     - name: Upload APK
       uses: actions/upload-artifact@v4

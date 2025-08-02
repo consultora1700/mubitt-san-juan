@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
 }
@@ -111,6 +111,11 @@ android {
         }
         animationsDisabled = true
     }
+    
+    // KSP configuration
+    ksp {
+        arg("correctErrorTypes", "true")
+    }
 }
 
 // Function to get Google Maps API Key from environment or properties
@@ -161,7 +166,7 @@ dependencies {
     
     // Hilt DI
     implementation 'com.google.dagger:hilt-android:2.48'
-    kapt 'com.google.dagger:hilt-compiler:2.48'
+    ksp 'com.google.dagger:hilt-compiler:2.48'
     implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'
     
     // Network
@@ -172,7 +177,7 @@ dependencies {
     // Room Database
     implementation 'androidx.room:room-runtime:2.6.1'
     implementation 'androidx.room:room-ktx:2.6.1'
-    kapt 'androidx.room:room-compiler:2.6.1'
+    ksp 'androidx.room:room-compiler:2.6.1'
     
     // Maps
     implementation 'com.google.android.gms:play-services-maps:18.2.0'
